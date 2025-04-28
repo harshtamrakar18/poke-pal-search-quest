@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,34 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Pokemon type colors
+				pokemonType: {
+					normal: '#A8A77A',
+					fire: '#EE8130',
+					water: '#6390F0',
+					electric: '#F7D02C',
+					grass: '#7AC74C',
+					ice: '#96D9D6',
+					fighting: '#C22E28',
+					poison: '#A33EA1',
+					ground: '#E2BF65',
+					flying: '#A98FF3',
+					psychic: '#F95587',
+					bug: '#A6B91A',
+					rock: '#B6A136',
+					ghost: '#735797',
+					dragon: '#6F35FC',
+					dark: '#705746',
+					steel: '#B7B7CE',
+					fairy: '#D685AD',
+				},
+				pokedex: {
+					red: '#ff0000',
+					darkRed: '#cc0000',
+					lightGray: '#f5f5f5',
+					mediumGray: '#e0e0e0',
+					darkGray: '#333333',
 				}
 			},
 			borderRadius: {
@@ -84,11 +113,27 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'bounce': {
+					'0%, 100%': { 
+						transform: 'translateY(0)',
+						animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+					},
+					'50%': {
+						transform: 'translateY(-25%)',
+						animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+					}
+				},
+				'spin': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'bounce': 'bounce 1s infinite',
+				'spin': 'spin 1s linear infinite'
 			}
 		}
 	},

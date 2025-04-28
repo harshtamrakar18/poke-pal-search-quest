@@ -12,7 +12,7 @@ const TypeFilter: React.FC<TypeFilterProps> = ({ selectedType, types, onTypeChan
   return (
     <div className="w-full max-w-xs">
       <Select value={selectedType} onValueChange={onTypeChange}>
-        <SelectTrigger className="w-full bg-white border-2 border-pokedex-mediumGray focus:border-pokedex-red">
+        <SelectTrigger className="w-full bg-white dark:bg-gray-800 border-2 border-pokedex-mediumGray dark:border-gray-700 focus:border-pokedex-red dark:focus:border-pokedex-red">
           <SelectValue placeholder="Filter by type" />
         </SelectTrigger>
         <SelectContent>

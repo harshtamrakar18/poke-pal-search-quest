@@ -95,7 +95,7 @@ const Index = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         <Header />
         <main className="container py-6">
           <LoadingSpinner />
@@ -106,7 +106,7 @@ const Index = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         <Header />
         <main className="container py-6">
           <ErrorDisplay message={error} onRetry={fetchPokemonData} />
@@ -116,7 +116,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Header />
       <main className="container py-6">
         <div className="flex flex-col md:flex-row gap-4 items-center justify-between mb-6">
@@ -128,16 +128,16 @@ const Index = () => {
           />
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm p-4 border border-pokedex-mediumGray">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4 border border-pokedex-mediumGray dark:border-gray-700 transition-colors duration-300">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-semibold text-pokedex-darkGray">
+            <h2 className="text-xl font-semibold text-pokedex-darkGray dark:text-white">
               {filteredPokemon.length} Pokémon Found
             </h2>
           </div>
           <PokemonList pokemonList={filteredPokemon} />
         </div>
       </main>
-      <footer className="bg-pokedex-darkGray text-white text-center py-4 mt-8">
+      <footer className="bg-pokedex-darkGray dark:bg-gray-800 text-white text-center py-4 mt-8 transition-colors duration-300">
         <p className="text-sm">Powered by PokéAPI - Data for the first 150 Pokémon</p>
       </footer>
     </div>

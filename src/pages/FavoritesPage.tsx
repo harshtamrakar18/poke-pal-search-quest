@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import PokemonList from '@/components/PokemonList';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { usePokemon } from '@/hooks/usePokemon';
-import { usePaginationControls } from '@/hooks/usePagination';
+import { usePagination } from '@/hooks/usePagination';
 import { usePokemonContext } from '@/contexts/PokemonContext';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';

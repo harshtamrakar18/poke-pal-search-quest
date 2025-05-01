@@ -1,5 +1,5 @@
 
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 
 interface UsePaginationProps<T> {
   data: T[];
@@ -91,6 +91,3 @@ export const usePagination = <T>({ data, itemsPerPage = 12 }: UsePaginationProps
     pageNumbers,
   };
 };
-
-// For proper TypeScript support
-import { useEffect } from 'react';

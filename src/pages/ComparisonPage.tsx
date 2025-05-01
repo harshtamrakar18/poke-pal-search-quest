@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { getPokemonDetails } from '@/services/pokemonService';
+import { usePokemonDetails } from '@/services/pokemonService';
 import { usePokemonContext } from '@/contexts/PokemonContext';
 import Header from '@/components/Header';
 import LoadingSpinner from '@/components/LoadingSpinner';
@@ -13,26 +12,18 @@ import { Button } from '@/components/ui/button';
 const ComparisonPage = () => {
   const { comparisonList, clearComparison } = usePokemonContext();
 
-  // Fetch data for the comparison Pokémon
+  // Fetch data for the comparison Pokémon using our new hooks
   const { 
     data: pokemon1, 
     isLoading: isLoading1, 
     error: error1 
-  } = useQuery({
-    queryKey: ['pokemon', comparisonList[0]],
-    queryFn: () => getPokemonDetails(comparisonList[0]),
-    enabled: comparisonList.length > 0,
-  });
+  } = usePokemonDetails(comparisonList[0] || 0);
 
   const { 
     data: pokemon2, 
     isLoading: isLoading2, 
     error: error2 
-  } = useQuery({
-    queryKey: ['pokemon', comparisonList[1]],
-    queryFn: () => getPokemonDetails(comparisonList[1]),
-    enabled: comparisonList.length > 1,
-  });
+  } = usePokemonDetails(comparisonList[1] || 0);
 
   const isLoading = isLoading1 || isLoading2;
   const error = error1 || error2;
